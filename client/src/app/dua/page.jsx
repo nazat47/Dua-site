@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-const page = () => {
+const Dua = () => {
   const router = useRouter();
   useEffect(() => {
     router.push(`/dua/category?cat=1`);
@@ -10,4 +10,4 @@ const page = () => {
   return null
 };
 
-export default page;
+export default Dua;
