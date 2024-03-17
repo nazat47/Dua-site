@@ -94,7 +94,7 @@ const Duas = ({ subCat }) => {
                   onClick={() => setActive(dua.dua_id) || playAudio(dua.dua_id)}
                   className="cursor-pointer"
                 >
-                  {active === dua.dua_id && play ? (
+                  {active === dua.dua_id && !play ? (
                     <>
                       <FaCirclePause
                         className="text-green-600 cursor-pointer"
