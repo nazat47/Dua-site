@@ -25,7 +25,7 @@ const LeftSide = ({ open, setOpen }) => {
     >
       <div
         ref={ref}
-        className={`absolute right-0 top-0 h-full w-[400px] bg-white rounded-l-[70px] transition-transform duration-700 ease-in-out${
+        className={`absolute right-0 top-0 h-full max-sm:w-[300px] w-[400px] bg-white rounded-l-[70px] transition-transform duration-700 ease-in-out${
           open ? "transform translate-x-0" : "transform translate-x-full"
         }`}
       >

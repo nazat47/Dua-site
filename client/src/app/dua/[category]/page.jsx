@@ -127,7 +127,7 @@ const DuaPage = ({ params }) => {
                   size={20}
                 />
               </div>
-              <div className="h-[60vh] xl:h-[75vh] w-full flex flex-col gap-4 overflow-y-scroll overflow-x-hidden">
+              <div className="h-[65vh] xl:h-[75vh] w-full flex flex-col gap-4 overflow-y-scroll overflow-x-hidden">
                 {categories?.map((cat, i) => (
                   <>
                     <div
@@ -173,7 +173,8 @@ const DuaPage = ({ params }) => {
                                 <p
                                   onClick={() =>
                                     setSubCatActive(subCat) ||
-                                    handleSubCategoryClick(subCat)
+                                    handleSubCategoryClick(subCat) ||
+                                    setOpenCategory(false)
                                   }
                                   className={`cursor-pointer font-semibold ${
                                     subCatActive?.subcat_id === subCat.subcat_id

@@ -54,7 +54,7 @@ const Duas = ({ subCat }) => {
     <div>
       {dua?.map((dua, i) => (
         <div
-        key={i}
+          key={i}
           id={`dua-${dua.dua_id}`}
           className="mb-4 h-auto w-full bg-white rounded-lg p-4"
         >
@@ -114,20 +114,63 @@ const Duas = ({ subCat }) => {
                 </div>
               )}
               <div className="flex gap-4 ml-auto">
-                <IoCopyOutline
-                  size={25}
-                  className="text-gray-500 cursor-pointer"
-                />
-                <CiBookmark
-                  size={25}
-                  className="text-gray-500 cursor-pointer"
-                />
-                <GoLightBulb
-                  size={25}
-                  className="text-gray-500 cursor-pointer"
-                />
-                <LuShare2 size={25} className="text-gray-500 cursor-pointer" />
-                <PiWarningOctagonThin size={25} className="cursor-pointer" />
+                <div className="relative group">
+                  <IoCopyOutline
+                    size={25}
+                    className="text-gray-500 cursor-pointer"
+                  />
+                  <div className="absolute hidden group-hover:flex top-[-40px] right-[-20px] bg-gray-700 rounded-lg">
+                    <div className="absolute top-7 right-7 w-0 h-0 border-l-[7px] border-l-transparent border-t-[11px] border-t-gray-700 border-r-[7px] border-r-transparent"></div>
+                    <div className="h-[30px] w-[70px] flex items-center justify-center">
+                      <p className="text-xs text-white">Copy</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <CiBookmark
+                    size={25}
+                    className="text-gray-500 cursor-pointer"
+                  />
+                  <div className="absolute hidden group-hover:flex top-[-40px] right-[-20px] bg-gray-700 rounded-lg">
+                    <div className="absolute top-7 right-7 w-0 h-0 border-l-[7px] border-l-transparent border-t-[11px] border-t-gray-700 border-r-[7px] border-r-transparent"></div>
+                    <div className="h-[30px] w-[70px] flex items-center justify-center">
+                      <p className="text-xs text-white">Bookmark</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <GoLightBulb
+                    size={25}
+                    className="text-gray-500 cursor-pointer"
+                  />
+                  <div className="absolute hidden group-hover:flex top-[-40px] right-[-20px] bg-gray-700 rounded-lg">
+                    <div className="absolute top-7 right-7 w-0 h-0 border-l-[7px] border-l-transparent border-t-[11px] border-t-gray-700 border-r-[7px] border-r-transparent"></div>
+                    <div className="h-[30px] w-[70px] flex items-center justify-center">
+                      <p className="text-xs text-white">Memorize</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <LuShare2
+                    size={25}
+                    className="text-gray-500 cursor-pointer"
+                  />
+                  <div className="absolute hidden group-hover:flex top-[-40px] right-[-20px] bg-gray-700 rounded-lg">
+                    <div className="absolute top-7 right-7 w-0 h-0 border-l-[7px] border-l-transparent border-t-[11px] border-t-gray-700 border-r-[7px] border-r-transparent"></div>
+                    <div className="h-[30px] w-[70px] flex items-center justify-center">
+                      <p className="text-xs text-white">Share</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <PiWarningOctagonThin size={25} className="cursor-pointer" />
+                  <div className="absolute hidden group-hover:flex top-[-40px] right-[-20px] bg-gray-700 rounded-lg">
+                    <div className="absolute top-7 right-7 w-0 h-0 border-l-[7px] border-l-transparent border-t-[11px] border-t-gray-700 border-r-[7px] border-r-transparent"></div>
+                    <div className="h-[30px] w-[70px] flex items-center justify-center">
+                      <p className="text-xs text-white">Report</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
