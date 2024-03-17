@@ -21,7 +21,9 @@ const DuaPage = ({ params }) => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const { data } = await axios.get("https://dua-site.onrender.com/category");
+        const { data } = await axios.get(
+          "https://dua-site.onrender.com/category"
+        );
         setCategories(data);
         setActive(data[0]);
       } catch (error) {
@@ -96,11 +98,9 @@ const DuaPage = ({ params }) => {
   return (
     <div className="bg-slate-200 w-full min-h-screen p-4">
       <div className="flex gap-4">
-      <div
+        <div
           className={`lg:block lg:w-[400px] xl:h-screen lg:bg-white lg:rounded-xl max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:bg-[#0000004b] z-[99] max-lg:w-screen max-lg:h-screen transition-transform duration-300 transform ${
-            openCategory
-              ? "max-lg:-translate-x-0"
-              : "max-lg:-translate-x-full"
+            openCategory ? "max-lg:-translate-x-0" : "max-lg:-translate-x-full"
           }`}
         >
           <div
@@ -127,7 +127,7 @@ const DuaPage = ({ params }) => {
                   size={20}
                 />
               </div>
-              <div className="h-[65vh] xl:h-[75vh] w-full flex flex-col gap-4 overflow-y-scroll overflow-x-hidden">
+              <div className="h-[70vh] xl:h-[75vh] w-full flex flex-col gap-4 overflow-y-scroll overflow-x-hidden">
                 {categories?.map((cat, i) => (
                   <>
                     <div
@@ -167,14 +167,16 @@ const DuaPage = ({ params }) => {
                       {active?.cat_id === cat.cat_id &&
                         subCategories?.map((subCat, i) => (
                           <>
-                            <div key={i} className="flex w-full min-h-[10px] items-start justify-start my-2">
+                            <div
+                              key={i}
+                              className="flex w-full min-h-[10px] items-start justify-start my-2"
+                            >
                               <div className="absolute left-[-5px] flex gap-3 items-center justify-start w-full">
                                 <div className="size-2 bg-green-400 rounded-full"></div>
                                 <p
                                   onClick={() =>
                                     setSubCatActive(subCat) ||
-                                    handleSubCategoryClick(subCat) ||
-                                    setOpenCategory(false)
+                                    handleSubCategoryClick(subCat)
                                   }
                                   className={`cursor-pointer font-semibold ${
                                     subCatActive?.subcat_id === subCat.subcat_id
@@ -200,7 +202,8 @@ const DuaPage = ({ params }) => {
                                         <p
                                           onClick={() =>
                                             setDuaActive(dua) ||
-                                            handleDuaClick(dua)
+                                            handleDuaClick(dua) || 
+                                            setOpenCategory(false)
                                           }
                                           className={`cursor-pointer text-sm ${
                                             duaActive?.dua_id === dua.dua_id

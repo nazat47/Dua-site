@@ -16,8 +16,8 @@ const Header = () => {
         </div>
         <p className="font-semibold text-lg">Dua & Ruqyah</p>
       </div>
-      <div className="flex items-center w-[50%] xl:w-[40%] justify-between">
-        <div className="flex items-center relative">
+      <div className="flex items-center w-[60%] xl:w-[40%] justify-between">
+        <div className="flex items-center relative gap-3">
           <input
             type="text"
             placeholder="Search by Dua Name"
