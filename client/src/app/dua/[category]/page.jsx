@@ -8,7 +8,7 @@ import { HiOutlineFolderOpen } from "react-icons/hi";
 import axios from "axios";
 import DuaCard from "./_components/DuaCard";
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [duas, setDuas] = useState([]);
@@ -268,4 +268,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
