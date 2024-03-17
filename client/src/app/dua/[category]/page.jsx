@@ -167,7 +167,7 @@ const DuaPage = ({ params }) => {
                       {active?.cat_id === cat.cat_id &&
                         subCategories?.map((subCat, i) => (
                           <>
-                            <div className="flex w-full min-h-[10px] items-start justify-start my-2">
+                            <div key={i} className="flex w-full min-h-[10px] items-start justify-start my-2">
                               <div className="absolute left-[-5px] flex gap-3 items-center justify-start w-full">
                                 <div className="size-2 bg-green-400 rounded-full"></div>
                                 <p

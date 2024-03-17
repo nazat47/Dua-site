@@ -54,6 +54,7 @@ const Duas = ({ subCat }) => {
     <div>
       {dua?.map((dua, i) => (
         <div
+        key={i}
           id={`dua-${dua.dua_id}`}
           className="mb-4 h-auto w-full bg-white rounded-lg p-4"
         >
