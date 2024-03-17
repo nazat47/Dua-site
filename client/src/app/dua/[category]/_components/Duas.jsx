@@ -13,6 +13,7 @@ import { FaCirclePause } from "react-icons/fa6";
 const Duas = ({ subCat }) => {
   const [dua, setDua] = useState(null);
   const [play, setPlay] = useState(true);
+  const [active, setActive] = useState(0);
   const audioRef = useRef(null);
   const searchParams = useSearchParams();
 
@@ -20,7 +21,7 @@ const Duas = ({ subCat }) => {
     const getDuas = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/dua/${subCat.subcat_id}`
+          `https://dua-site.onrender.com/dua/${subCat.subcat_id}`
         );
         setDua(data);
       } catch (error) {
@@ -38,13 +39,15 @@ const Duas = ({ subCat }) => {
     }
   }, [searchParams]);
 
-  const playAudio = () => {
-    if (play) {
-      audioRef.current.play();
-      setPlay(false);
-    } else {
-      audioRef.current.pause();
-      setPlay(true);
+  const playAudio = (duaId) => {
+    if (duaId === active) {
+      if (play) {
+        audioRef.current.play();
+        setPlay(false);
+      } else {
+        audioRef.current.pause();
+        setPlay(true);
+      }
     }
   };
   return (
@@ -85,21 +88,28 @@ const Duas = ({ subCat }) => {
             </div>
             <p>{dua.bottom_en}</p>
             <div className="w-full flex justify-between items-center">
-              {dua.audio && play ? (
-                <div onClick={playAudio} className="cursor-pointer">
-                  <HiPlayCircle
-                    className="text-green-600 cursor-pointer"
-                    size={40}
-                  />
-                  <audio ref={audioRef} src={dua.audio} />
-                </div>
-              ) : (
-                <div onClick={playAudio} className="cursor-pointer">
-                  <FaCirclePause
-                    className="text-green-600 cursor-pointer"
-                    size={40}
-                  />
-                  <audio ref={audioRef} src={dua.audio} />
+              {dua.audio && (
+                <div
+                  onClick={() => setActive(dua.dua_id) || playAudio(dua.dua_id)}
+                  className="cursor-pointer"
+                >
+                  {active === dua.dua_id && play ? (
+                    <>
+                      <FaCirclePause
+                        className="text-green-600 cursor-pointer"
+                        size={40}
+                      />
+                      <audio ref={audioRef} src={dua.audio} />
+                    </>
+                  ) : (
+                    <>
+                      <HiPlayCircle
+                        className="text-green-600 cursor-pointer"
+                        size={40}
+                      />
+                      <audio ref={audioRef} src={dua.audio} />
+                    </>
+                  )}
                 </div>
               )}
               <div className="flex gap-4 ml-auto">

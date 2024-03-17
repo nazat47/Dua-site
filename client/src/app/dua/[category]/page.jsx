@@ -21,7 +21,7 @@ const page = ({ params }) => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/category");
+        const { data } = await axios.get("https://dua-site.onrender.com/category");
         setCategories(data);
         setActive(data[0]);
       } catch (error) {
@@ -35,7 +35,7 @@ const page = ({ params }) => {
     const getSubCategories = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/sub-category/${active.cat_id}`
+          `https://dua-site.onrender.com/sub-category/${active.cat_id}`
         );
         setSubCategories(data);
       } catch (error) {
@@ -49,7 +49,7 @@ const page = ({ params }) => {
     const getDuas = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/dua/${subCatActive.subcat_id}`
+          `https://dua-site.onrender.com/dua/${subCatActive.subcat_id}`
         );
         setDuas(data);
       } catch (error) {

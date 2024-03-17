@@ -18,7 +18,7 @@ const DuaCard = ({
     const getSubCategories = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/sub-category/${cat.cat_id}`
+          `https://dua-site.onrender.com/sub-category/${cat.cat_id}`
         );
         setSubCat(data);
       } catch (error) {
