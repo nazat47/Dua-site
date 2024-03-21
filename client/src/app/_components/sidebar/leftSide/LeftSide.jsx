@@ -19,13 +19,13 @@ const LeftSide = ({ open, setOpen }) => {
   }, []);
   return (
     <div
-      className={`fixed top-0 left-0 bg-[#0000004b] z-[999] w-screen h-screen transition-transform duration-300 ${
+      className={`fixed top-0 right-0 bottom-0 bg-[#0000004b] z-[999] w-full min-h-screen transition-transform duration-300 ${
         open ? "transform translate-x-0" : "transform translate-x-full"
       }`}
     >
       <div
         ref={ref}
-        className={`absolute right-0 top-0 h-full max-sm:w-[300px] w-[400px] bg-white rounded-l-[70px] transition-transform duration-700 ease-in-out${
+        className={`absolute right-0 top-0 h-full max-sm:w-[300px] w-[400px] bg-white rounded-l-[70px] transition-transform duration-700 ease-in-out ${
           open ? "transform translate-x-0" : "transform translate-x-full"
         }`}
       >
